@@ -18,11 +18,11 @@ public class Starks implements House {
 
     @Override
     public void prepareForWar() {
-        Log.i(Constants.LOG_TAG, this.getClass().getSimpleName()+" prepared for war!");
+        Log.d(Constants.LOG_TAG, this.getClass().getSimpleName()+" prepared for war!");
     }
 
     @Override
     public void reportForWar() {
-        Log.i(Constants.LOG_TAG, this.getClass().getSimpleName()+" reporting...");
+        Log.d(Constants.LOG_TAG, this.getClass().getSimpleName()+" reporting...");
     }
 }
