@@ -4,6 +4,9 @@ import com.rjdeleon.daggertutorial.component.BattleComponent;
 import com.rjdeleon.daggertutorial.component.DaggerBattleComponent;
 import com.rjdeleon.daggertutorial.model.houses.Boltons;
 import com.rjdeleon.daggertutorial.model.houses.Starks;
+import com.rjdeleon.daggertutorial.model.services.Cash;
+import com.rjdeleon.daggertutorial.model.services.Soldiers;
+import com.rjdeleon.daggertutorial.module.BraavosModule;
 
 public class BattleOfBastards {
 
@@ -20,10 +23,17 @@ public class BattleOfBastards {
 //        war.prepare();
 //        war.report();
 
+        Cash cash = new Cash();
+        Soldiers soldiers = new Soldiers();
+
         // Using Dagger 2
-        BattleComponent battleComponent = DaggerBattleComponent.create();
+        BattleComponent battleComponent = DaggerBattleComponent
+                .builder().braavosModule(new BraavosModule(cash, soldiers)).build();
         War war = battleComponent.getWar();
         war.prepare();
         war.report();
+
+        battleComponent.getCash();
+        battleComponent.getSoldiers();
     }
 }
