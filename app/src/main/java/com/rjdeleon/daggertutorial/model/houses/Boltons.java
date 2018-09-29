@@ -6,14 +6,15 @@ import com.rjdeleon.daggertutorial.Constants;
 import com.rjdeleon.daggertutorial.model.Allies;
 import com.rjdeleon.daggertutorial.model.IronBank;
 
+import javax.inject.Inject;
+
 public class Boltons implements House {
 
     private Allies allies;
     private IronBank bank;
 
-    public Boltons(Allies allies, IronBank bank) {
-        this.allies = allies;
-        this.bank = bank;
+    @Inject
+    public Boltons() {
     }
 
     @Override
