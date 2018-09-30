@@ -1,6 +1,6 @@
-package com.rjdeleon.daggertutorial.model.houses;
+package com.rjdeleon.daggertutorial.tutorial_part1.model.houses;
 
-import com.rjdeleon.daggertutorial.model.Dragons;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.Dragons;
 
 public class Targaryens {
 

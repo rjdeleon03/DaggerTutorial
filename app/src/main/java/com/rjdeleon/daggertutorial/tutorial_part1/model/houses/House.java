@@ -1,4 +1,4 @@
-package com.rjdeleon.daggertutorial.model.houses;
+package com.rjdeleon.daggertutorial.tutorial_part1.model.houses;
 
 public interface House {
 

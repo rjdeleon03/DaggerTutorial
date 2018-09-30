@@ -1,7 +1,7 @@
-package com.rjdeleon.daggertutorial.module;
+package com.rjdeleon.daggertutorial.tutorial_part1.module;
 
-import com.rjdeleon.daggertutorial.model.services.Cash;
-import com.rjdeleon.daggertutorial.model.services.Soldiers;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.services.Cash;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.services.Soldiers;
 
 import dagger.Module;
 import dagger.Provides;

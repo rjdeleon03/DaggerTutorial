@@ -1,7 +1,7 @@
-package com.rjdeleon.daggertutorial.model;
+package com.rjdeleon.daggertutorial.tutorial_part1.model;
 
-import com.rjdeleon.daggertutorial.model.houses.Boltons;
-import com.rjdeleon.daggertutorial.model.houses.Starks;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.houses.Boltons;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.houses.Starks;
 
 import javax.inject.Inject;
 

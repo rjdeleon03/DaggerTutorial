@@ -1,10 +1,10 @@
-package com.rjdeleon.daggertutorial.model.houses;
+package com.rjdeleon.daggertutorial.tutorial_part1.model.houses;
 
 import android.util.Log;
 
 import com.rjdeleon.daggertutorial.Constants;
-import com.rjdeleon.daggertutorial.model.Allies;
-import com.rjdeleon.daggertutorial.model.IronBank;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.Allies;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.IronBank;
 
 import javax.inject.Inject;
 

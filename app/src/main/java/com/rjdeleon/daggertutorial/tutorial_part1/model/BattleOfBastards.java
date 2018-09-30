@@ -1,12 +1,10 @@
-package com.rjdeleon.daggertutorial.model;
+package com.rjdeleon.daggertutorial.tutorial_part1.model;
 
-import com.rjdeleon.daggertutorial.component.BattleComponent;
-import com.rjdeleon.daggertutorial.component.DaggerBattleComponent;
-import com.rjdeleon.daggertutorial.model.houses.Boltons;
-import com.rjdeleon.daggertutorial.model.houses.Starks;
-import com.rjdeleon.daggertutorial.model.services.Cash;
-import com.rjdeleon.daggertutorial.model.services.Soldiers;
-import com.rjdeleon.daggertutorial.module.BraavosModule;
+import com.rjdeleon.daggertutorial.tutorial_part1.component.BattleComponent;
+import com.rjdeleon.daggertutorial.tutorial_part1.component.DaggerBattleComponent;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.services.Cash;
+import com.rjdeleon.daggertutorial.tutorial_part1.model.services.Soldiers;
+import com.rjdeleon.daggertutorial.tutorial_part1.module.BraavosModule;
 
 public class BattleOfBastards {
 
