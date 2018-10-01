@@ -39,6 +39,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.6.0'
     implementation 'org.apache.commons:commons-lang3:3.7'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
 
     // Dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
