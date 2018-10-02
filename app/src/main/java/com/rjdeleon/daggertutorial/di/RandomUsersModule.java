@@ -3,6 +3,7 @@ package com.rjdeleon.daggertutorial.di;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.rjdeleon.daggertutorial.Constants;
+import com.rjdeleon.daggertutorial.di.custom.RandomUserApplicationScope;
 import com.rjdeleon.daggertutorial.interfaces.RandomUsersApi;
 
 import dagger.Module;
@@ -21,6 +22,7 @@ public class RandomUsersModule {
         return retrofit.create(RandomUsersApi.class);
     }
 
+    @RandomUserApplicationScope
     @Provides
     public Retrofit retrofit(OkHttpClient okHttpClient,
                              GsonConverterFactory gsonConverterFactory,

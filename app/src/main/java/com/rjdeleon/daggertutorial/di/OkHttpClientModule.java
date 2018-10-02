@@ -6,6 +6,8 @@ import com.rjdeleon.daggertutorial.Constants;
 
 import java.io.File;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
@@ -33,7 +35,7 @@ public class OkHttpClientModule {
     }
 
     @Provides
-    public File file(Context context)  {
+    public File file(@Named("application_context") Context context)  {
         File file = new File(context.getCacheDir(), Constants.HTTP_CACHE);
         file.mkdirs();
         return file;
