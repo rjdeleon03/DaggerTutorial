@@ -1,10 +1,12 @@
-package com.rjdeleon.daggertutorial;
+package com.rjdeleon.daggertutorial.MainActivityFeature;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.rjdeleon.daggertutorial.R;
+import com.rjdeleon.daggertutorial.RandomUserApplication;
 import com.rjdeleon.daggertutorial.adapter.RandomUserAdapter;
 import com.rjdeleon.daggertutorial.di.ContextModule;
 import com.rjdeleon.daggertutorial.di.DaggerRandomUserComponent;
@@ -24,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     RandomUserAdapter mAdapter;
 
     RandomUsersApi randomUsersApi;
-    Picasso picasso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
         Timber.plant(new Timber.DebugTree());
 
-        RandomUserComponent daggerRandomUserComponent = DaggerRandomUserComponent.builder()
-                .contextModule(new ContextModule(this))
+        MainActivityComponent mainActivityComponent = DaggerMainActivityComponent.builder()
+                .mainActivityModule(new MainActivityModule(this))
+                .randomUserComponent(RandomUserApplication.get(this).getRandomUserApplicationComponent())
                 .build();
 
-        picasso = daggerRandomUserComponent.getPicasso();
-        randomUsersApi = daggerRandomUserComponent.getRandomUserService();
+        randomUsersApi = mainActivityComponent.getRandomUserService();
+        mAdapter = mainActivityComponent.getRandomUserAdapter();
 
         populateUsers();
     }
@@ -56,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RandomUsers> call, Response<RandomUsers> response) {
                 if (response.isSuccessful()) {
-                    mAdapter = new RandomUserAdapter();
                     mAdapter.setItems(response.body().getResults());
                     recyclerView.setAdapter(mAdapter);
                 }

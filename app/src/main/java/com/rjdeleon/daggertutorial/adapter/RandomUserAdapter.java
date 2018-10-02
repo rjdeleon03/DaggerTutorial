@@ -1,5 +1,6 @@
 package com.rjdeleon.daggertutorial.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +19,13 @@ import java.util.List;
 public class RandomUserAdapter extends RecyclerView.Adapter<RandomUserAdapter.RandomUserViewHolder> {
 
     private List<Result> resultList = new ArrayList<>();
+    private Context context;
+    private Picasso picasso;
+
+    public RandomUserAdapter(Context context, Picasso picasso) {
+        this.context = context;
+        this.picasso = picasso;
+    }
 
     @NonNull
     @Override
