@@ -15,6 +15,8 @@ import com.rjdeleon.daggertutorial.interfaces.RandomUsersApi;
 import com.rjdeleon.daggertutorial.model.RandomUsers;
 import com.squareup.picasso.Picasso;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,8 +25,11 @@ import timber.log.Timber;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
+
+    @Inject
     RandomUserAdapter mAdapter;
 
+    @Inject
     RandomUsersApi randomUsersApi;
 
     @Override
@@ -40,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 .mainActivityModule(new MainActivityModule(this))
                 .randomUserComponent(RandomUserApplication.get(this).getRandomUserApplicationComponent())
                 .build();
-
-        randomUsersApi = mainActivityComponent.getRandomUserService();
-        mAdapter = mainActivityComponent.getRandomUserAdapter();
+        mainActivityComponent.injectMainActivity(this);
 
         populateUsers();
     }

@@ -11,7 +11,5 @@ import dagger.Component;
 @MainActivityScope
 public interface MainActivityComponent {
 
-    RandomUserAdapter getRandomUserAdapter();
-
-    RandomUsersApi getRandomUserService();
+    void injectMainActivity(MainActivity mainActivity);
 }
