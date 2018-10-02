@@ -24,10 +24,10 @@ public class Result {
     private Login login;
     @SerializedName("dob")
     @Expose
-    private String dob;
+    private Date dob;
     @SerializedName("registered")
     @Expose
-    private String registered;
+    private Date registered;
     @SerializedName("phone")
     @Expose
     private String phone;
@@ -84,19 +84,19 @@ public class Result {
         this.login = login;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
-    public String getRegistered() {
+    public Date getRegistered() {
         return registered;
     }
 
-    public void setRegistered(String registered) {
+    public void setRegistered(Date registered) {
         this.registered = registered;
     }
 
